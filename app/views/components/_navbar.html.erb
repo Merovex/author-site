@@ -4,18 +4,17 @@
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between py-4">
         <div class="flex items-center">
-          <div class='text-white'>
-            <%# render 'elements/logo', klass: 'h-10 w-10 text-white opacity-30' %>
+          <div class='text-gray-500'>
+            <%= render 'elements/logo', klass: 'h-10 w-10 text-gray-500 opacity-30' %>
           </div>
-          <div class="font-display text-3xl ml-2 text-white">
+          <div class="font-display text-3xl ml-2 text-gray-500">
             Ben Wilson
-            <span class='text-white opacity-30'>Writes</span>
+            <span class='opacity-30'>Writes</span>
           </div>
         </div>
 
         <div class="hidden sm:flex sm:items-center">
-          <%# render 'elements/navbar-menu' %>
-          LARGE NAVBAR MENU
+          <%= render 'components/navbar-menu' %>
         </div>
 
         <div class="hidden sm:flex sm:items-center">
@@ -27,14 +26,12 @@
         </div>
 
         <div class="sm:hidden cursor-pointer" data-action="click->reveal#toggle" >
-          <%#= render 'elements/menu-toggle', klass: 'h-10 w-10 text-brand-50' %>
-          NAVBAR MENU
+          <%= render 'elements/menu-toggle', klass: 'h-10 w-10 text-gray-500' %>
         </div>
       </div>
       <div data-reveal-target="item" class="hidden border-t-2 py-2">
         <div class="flex flex-col">
-          <%#= render 'elements/navbar-menu' %>
-          SMALL NAVBAR MENU
+          <%= render 'components/navbar-menu' %>
           <hr class='mb-2'>
           <%# if user_signed_in? %>
             <%#= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn bg-white text-brand-500' %>
