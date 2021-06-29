@@ -1,0 +1,18 @@
+
+
+<div class="max-w-2xl mx-auto">
+<p id="notice"><%= notice %></p>
+    <%= headline("Posts") %>
+    <div class="my-4"><%= link_to 'New Post', new_post_path, class: button_css('red') %>
+    <%= render 'components/subscribe' %>
+    </div>
+
+    <% @posts.each do |post| %>
+      <article class="mb-4 border py-4 px-8 rounded-lg">
+        <aside class="text-center opacity-75 text-gray-500"><%= post.published_at.strftime('%d %B %Y') %></aside>
+        <%= h2(post.title, "text-center") %>
+        <p class='prose lg:prose-xl'><%= post.content.to_plain_text.truncate(256) %></p>
+        <p class='text-center my-4'><%= link_to 'Read More', post, class: button_css('purple') %></p>
+      </article>
+    <% end %>
+</div>

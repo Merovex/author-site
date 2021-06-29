@@ -1,0 +1,52 @@
+
+<div class="bg-brand-600 dark:bg-brand-400 shadow font-sans">
+  <div data-controller="reveal">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between py-4">
+        <div class="flex items-center">
+          <div class='text-white'>
+            <%# render 'elements/logo', klass: 'h-10 w-10 text-white opacity-30' %>
+          </div>
+          <div class="font-display text-3xl ml-2 text-white">
+            Ben Wilson
+            <span class='text-white opacity-30'>Writes</span>
+          </div>
+        </div>
+
+        <div class="hidden sm:flex sm:items-center">
+          <%# render 'elements/navbar-menu' %>
+          LARGE NAVBAR MENU
+        </div>
+
+        <div class="hidden sm:flex sm:items-center">
+          <%# if user_signed_in? %>
+            <%#= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: button('bg-white text-black') %>
+            <%# else %>
+            <%#= link_to 'Insiders', new_user_session_path, class: button('bg-white text-black') %>
+          <%#end%>
+        </div>
+
+        <div class="sm:hidden cursor-pointer" data-action="click->reveal#toggle" >
+          <%#= render 'elements/menu-toggle', klass: 'h-10 w-10 text-brand-50' %>
+          NAVBAR MENU
+        </div>
+      </div>
+      <div data-reveal-target="item" class="hidden border-t-2 py-2">
+        <div class="flex flex-col">
+          <%#= render 'elements/navbar-menu' %>
+          SMALL NAVBAR MENU
+          <hr class='mb-2'>
+          <%# if user_signed_in? %>
+            <%#= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn bg-white text-brand-500' %>
+          <%# else %>
+            <%#= link_to 'Insiders', new_user_session_path, class: 'btn bg-indigo-100 hover:bg-white' %>
+          <%#end%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% flash.each do |type, msg| %>
+  <%= render 'components/banner', type: type, msg: msg%>
+<% end %>

@@ -1,0 +1,14 @@
+<article class="max-w-2xl mx-auto mt-16">
+<p id="notice"><%= notice %></p>
+<aside class="text-center opacity-75 text-gray-500"><%= @post.published_at.strftime('%d %B %Y') %></aside>
+<div class="text-center"><%= headline(@post.title) %></div>
+
+<section class="max-w-prose prose lg:prose-xl mb-12">
+<%= @post.content %>
+</section>
+
+<%= render 'components/subscribe' %>
+
+<%= link_to 'Edit', edit_post_path(@post), class: button_css('blue') %> |
+<%= link_to 'Back', posts_path %>
+</article>
