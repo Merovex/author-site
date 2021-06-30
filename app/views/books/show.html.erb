@@ -1,0 +1,27 @@
+<article class="<%=t('css_article')%>">
+<div class="flex">
+<%= headline(@book.title) %>
+<%= render 'components/actions', obj: @book %>
+</div>
+<section>
+<%= render partial: 'book', locals: {book: @book, title: false} %>
+</section>
+
+<div class="">
+  <div class="flex font-sans border-b-2 border-gray-400">
+    <div class="px-4 py-2 mr-1 text-white bg-gray-400 border-t-2 border-l-2 border-r-2 border-gray-400 rounded-t-lg">Praise</div>
+    <div class="px-4 py-2 text-gray-400 border-t-2 border-l-2 border-r-2 border-gray-400 rounded-t-lg hover:bg-gray-100 hover:text-black">Sample</div>
+  </div>
+  <div class="#praise">
+  <%= h2("Praise For <em>#{@book.title}</em>".html_safe)%>
+  <% if @book.praises.empty? %>
+      <p>No praise yet. Maybe you can be the first?</p>
+      <%else%>
+      <%= @book.praises.inspect %>
+      <%end%>
+  </div>
+  <div class="my-8">
+    <%= render partial: 'excerpt' %>
+  </div>
+</div>
+</article>

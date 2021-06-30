@@ -1,0 +1,36 @@
+<% title ||= false %>
+<section class='grid gap-4 py-5 lg:grid-cols-3<% if title%> my-8 rounded-lg border shadow-xl<%end%>'>
+  <% if title %>
+  <h3 class="text-4xl text-center font-display lg:hidden">
+    <%= link_to book.title, book %>
+  </h3>
+  <% end %>
+  <div class='grid place-content-center'>
+    <% if book.cover.attached? %>
+      <%= image_tag book.thumb, class: 'rounded' %>
+    <% else %>
+    <img src='https://via.placeholder.com/200x300?text=Book+Cover' class='rounded'>
+    <% end %>
+  </div>
+  <div class='grid lg:col-span-2 place-content-center'>
+    <% if title %>
+    <h3 class="hidden my-4 text-3xl font-semibold text-left font-display lg:block">
+      <%= link_to book.title, book, class: 'hover:underline' %>
+    </h3>
+    <% end %>
+    
+    <section class="prose lg:prose-xl">
+    <%= book.blurb.to_plain_text.truncate(180) %>
+    </section>
+    
+    <% if title %>
+    <p class='my-5'>Read more about <em><%= link_to book.title, book, class: 'hover:underline' %></em></p>
+    <% end %>
+
+    <div class=''>
+    <button class="<%= button_css('green') %>">Amazon</button>
+    <button class="<%= button_css('blue') %>">Kindle</button>
+    <button class="<%= button_css('red') %>">Audible</button>
+    </div>
+  </div>
+</section>

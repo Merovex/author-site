@@ -1,0 +1,15 @@
+<div class="<%=t('css_article')%>">
+  <%= headline('Books') %>
+  <% if can? :admin, Book %>
+    <div class="flex mt-5 lg:mt-0 lg:ml-4h">
+      <%= link_to 'New Book', new_book_path, class: 'mx-4 hover:underline' %>
+      <%= link_to 'New Series', new_series_path, class: 'hover:underline' %>
+    </div>
+  <% end %>
+<% @series.each do |series| %>
+  <% next if series.books.empty? %>
+  <h2 class="mt-12 text-3xl font-bold sm:text-4xl font-display"><%= series.title %></h2>
+  <div class="divide-gray-200 xdivide-y">
+  <%= render partial: 'book', collection: series.books, locals: {title: true} %>
+  </div>
+<% end %></div>

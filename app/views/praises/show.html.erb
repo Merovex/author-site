@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @praise.book_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @praise.title %>
+</p>
+
+<p>
+  <strong>Quote:</strong>
+  <%= @praise.quote %>
+</p>
+
+<%= link_to 'Edit', edit_praise_path(@praise) %> |
+<%= link_to 'Back', praises_path %>

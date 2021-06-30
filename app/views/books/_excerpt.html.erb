@@ -1,0 +1,10 @@
+<div class="#sample">
+  <%= h2("Excerpt")%>
+  <div class="<%=t('css_prose')%> my-8">
+    <% if @book.excerpt.blank? %>
+    <p>No sample yet.</p>
+    <%else%>
+    <%= @book.excerpt %>
+    <%end%>
+  </div>
+</div>

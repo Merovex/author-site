@@ -11,8 +11,10 @@
     <%= stylesheet_pack_tag "application", "data-turbo-track": "reload" %>
   </head>
 
-  <body>
+  <body class='dark:bg-gray-800 dark:text-gray-300'>
     <%= render 'components/navbar' %>		
-    <main class="min-h-screen"><%= yield %></main>
+    <main class="min-h-screen">
+    <%= yield %>
+    </main>
   </body>
 </html>

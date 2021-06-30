@@ -1,0 +1,32 @@
+<%= form_with(model: praise) do |form| %>
+  <% if praise.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(praise.errors.count, "error") %> prohibited this praise from being saved:</h2>
+
+      <ul>
+        <% praise.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :book_id %>
+    <%= form.text_field :book_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quote %>
+    <%= form.rich_text_area :quote %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

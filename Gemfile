@@ -62,3 +62,7 @@ gem "devise", "~> 4.8"
 gem "cancancan", "~> 3.3"
 
 gem "rolify", "~> 6.0"
+
+gem "breadcrumbs_on_rails", "~> 4.1"
+
+gem "image_processing", "~> 1.12"

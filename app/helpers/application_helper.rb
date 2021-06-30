@@ -20,6 +20,7 @@ module ApplicationHelper
     content = tag.h1(title, class: css_class)
   end
   def h2(text, klass='')
+    text = t(text) if text.is_a?(Symbol)
     css_class = %w[
       font-display title text-2xl md:text-3xl text-black dark:text-white
     ].join(' ')
