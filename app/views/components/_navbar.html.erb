@@ -1,13 +1,13 @@
 
-<div class="bg-brand-600 dark:bg-brand-400 shadow font-sans">
+<div class="font-sans shadow bg-brand-600 dark:bg-brand-400">
   <div data-controller="reveal">
-    <div class="container mx-auto px-4">
+    <div class="container px-4 mx-auto">
       <div class="flex items-center justify-between py-4">
         <div class="flex items-center">
           <div class='text-gray-500'>
             <%= render 'elements/logo', klass: 'h-10 w-10 text-gray-500 opacity-30' %>
           </div>
-          <div class="font-display text-3xl ml-2 text-gray-500">
+          <div class="ml-2 text-3xl text-gray-500 font-display">
             Ben Wilson
             <span class='opacity-30'>Writes</span>
           </div>
@@ -18,18 +18,18 @@
         </div>
 
         <div class="hidden sm:flex sm:items-center">
-          <%# if user_signed_in? %>
-            <%#= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: button('bg-white text-black') %>
-            <%# else %>
-            <%#= link_to 'Insiders', new_user_session_path, class: button('bg-white text-black') %>
-          <%#end%>
+          <% if user_signed_in? %>
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: button_css('gray') %>
+            <% else %>
+            <%= link_to 'Insiders', new_user_session_path, class: button_css('purple') %>
+          <%end%>
         </div>
 
-        <div class="sm:hidden cursor-pointer" data-action="click->reveal#toggle" >
+        <div class="cursor-pointer sm:hidden" data-action="click->reveal#toggle" >
           <%= render 'elements/menu-toggle', klass: 'h-10 w-10 text-gray-500' %>
         </div>
       </div>
-      <div data-reveal-target="item" class="hidden border-t-2 py-2">
+      <div data-reveal-target="item" class="hidden py-2 border-t-2">
         <div class="flex flex-col">
           <%= render 'components/navbar-menu' %>
           <hr class='mb-2'>

@@ -13,6 +13,12 @@ module ApplicationHelper
 
     tag.section(content, class: 'section')
   end
+  def panel_headline(title)
+    css_class = %w[
+      font-sans title text-2xl md:text-3xl text-black dark:text-white font-bold mt-4 mb-8 text-center
+    ].join(' ')
+    content = tag.h1(title, class: css_class)
+  end
   def h2(text, klass='')
     css_class = %w[
       font-display title text-2xl md:text-3xl text-black dark:text-white
