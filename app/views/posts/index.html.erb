@@ -4,8 +4,9 @@
 <p id="notice"><%= notice %></p>
     <% headline("Posts") %>
     <div class="hidden"><%= link_to 'New Post', new_post_path, class: button_css('red') %>
-    <%= render 'components/subscribe' %>
+    
     </div>
+    <%= render 'components/subscribe' %>
 
     <% @posts.each do |post| %>
       <article class="my-8 border py-4 px-8 rounded-lg shadow-lg">
