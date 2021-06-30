@@ -1,0 +1,7 @@
+<article class="<%=t('css_article')%>">
+  <div class="text-center"><%= headline(@page.title) %></div>
+  <section class="<%=t('css_prose')%>">
+    <%= @page.content %>
+  </section>
+  <%= link_to 'Edit', edit_page_path(@page), class: button_css('blue') %>
+</article>

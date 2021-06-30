@@ -1,9 +1,9 @@
-<article class="max-w-2xl mx-auto mt-16">
+<article class="<%=t('css_article')%>">
 <p id="notice"><%= notice %></p>
-<aside class="text-center opacity-75 text-gray-500"><%= @post.published_at.strftime('%d %B %Y') %></aside>
+<aside class="text-center text-gray-500 opacity-75"><%= @post.published_at.strftime('%d %B %Y') %></aside>
 <div class="text-center"><%= headline(@post.title) %></div>
 
-<section class="max-w-prose prose lg:prose-xl mb-12 font-serif">
+<section class="mb-12 font-serif prose max-w-prose lg:prose-xl">
 <%= @post.content %>
 </section>
 
