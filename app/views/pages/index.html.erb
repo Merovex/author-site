@@ -1,29 +1,19 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Pages</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pages.each do |page| %>
-      <tr>
-        <td><%= page.title %></td>
-        <td><%= page.content %></td>
-        <td><%= link_to 'Show', page %></td>
-        <td><%= link_to 'Edit', edit_page_path(page) %></td>
-        <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="max-w-2xl mx-auto">
+<%= headline('Pages') %>
+<% @pages.each do |page| %>
+  <article class="px-8 py-4 my-8 border rounded-lg shadow-lg">
+    <%= h2(page.title, "text-center mt-2 mb-4") %>
+    <p class='prose lg:prose-xl'><%= page.content.to_plain_text.truncate(256) %></p>
+    <p class='my-4 text-center'>
+    <%= link_to 'Read More', page, class: button_css('purple') %>
+    <%= link_to 'Edit Page', edit_page_path(page), class: button_css('blue') %>
+    <%= link_to 'Destroy Page', edit_page_path(page), class: button_css('red') %>
+    </p>
+    
+  </article>
+<% end %>
+<%= link_to 'New Page', new_page_path, class: button_css('blue') %>
+</div>
 
 <br>
-
-<%= link_to 'New Page', new_page_path %>

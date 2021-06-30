@@ -9,6 +9,7 @@
 
 <%= render 'components/subscribe' %>
 
+<% if user_signed_in? %>
 <%= link_to 'Edit', edit_post_path(@post), class: button_css('blue') %> |
-<%= link_to 'Back', posts_path %>
+<% end %>
 </article>

@@ -3,17 +3,18 @@
 <div class="max-w-2xl mx-auto">
 <p id="notice"><%= notice %></p>
     <% headline("Posts") %>
-    <div class="hidden"><%= link_to 'New Post', new_post_path, class: button_css('red') %>
+    <% if user_signed_in? %>
+      <%= link_to 'New Post', new_post_path, class: button_css('red') %>
+    <% end %>
     
-    </div>
     <%= render 'components/subscribe' %>
 
     <% @posts.each do |post| %>
-      <article class="my-8 border py-4 px-8 rounded-lg shadow-lg">
-        <aside class="text-center opacity-75 text-gray-500"><%= post.published_at.strftime('%d %B %Y') %></aside>
+      <article class="px-8 py-4 my-8 border rounded-lg shadow-lg">
+        <aside class="text-center text-gray-500 opacity-75"><%= post.published_at.strftime('%d %B %Y') %></aside>
         <%= h2(post.title, "text-center mt-2 mb-4") %>
         <p class='prose lg:prose-xl'><%= post.content.to_plain_text.truncate(256) %></p>
-        <p class='text-center my-4'><%= link_to 'Read More', post, class: button_css('purple') %></p>
+        <p class='my-4 text-center'><%= link_to 'Read More', post, class: button_css('purple') %></p>
       </article>
     <% end %>
 </div>
