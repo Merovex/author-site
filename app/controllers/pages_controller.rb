@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
-  before_action :authenticate_user!, except: %i[show]
+  
   before_action :set_page, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: %i[show]
+  load_and_authorize_resource
 
   # GET /pages or /pages.json
   def index
