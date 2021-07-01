@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @subscription.email %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @subscription.user_id %>
+</p>
+
+<p>
+  <strong>Confirmation token:</strong>
+  <%= @subscription.confirmation_token %>
+</p>
+
+<p>
+  <strong>Confirmed at:</strong>
+  <%= @subscription.confirmed_at %>
+</p>
+
+<p>
+  <strong>Confirmation set at:</strong>
+  <%= @subscription.confirmation_set_at %>
+</p>
+
+<%= link_to 'Edit', edit_subscription_path(@subscription) %> |
+<%= link_to 'Back', subscriptions_path %>

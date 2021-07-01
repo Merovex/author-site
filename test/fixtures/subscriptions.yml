@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  user_id: 1
+  confirmation_token: MyString
+  confirmed_at: 2021-07-01 15:35:53
+  confirmation_set_at: 2021-07-01 15:35:53
+
+two:
+  email: MyString
+  user_id: 1
+  confirmation_token: MyString
+  confirmed_at: 2021-07-01 15:35:53
+  confirmation_set_at: 2021-07-01 15:35:53
