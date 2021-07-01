@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   resources :subscriptions
+  resources :confirmations
   resources :praises
   resources :books
   resources :series
