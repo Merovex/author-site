@@ -1,51 +1,13 @@
 <%# https://lineardesign.com/blog/landing-page-layout/ %>
 
-<%= render 'components/hero', overlay: 'bg-gray-800' %>
+<%= render 'books/sections/hero', overlay: 'bg-gray-800' %>
 <section class='py-4 text-center'>
   <%= render 'components/actions', obj: @book %>
   <%= render 'components/subscribe' %>
 </section>
-<section id='testimonials' class="py-4 <%= zebra() %>">
-  <div class="<%=t('css_article')%> ">
-  <%= h2("Praise for <em>#{@book}</em>".html_safe) %>
-  <p>social Proof</p>
-  <p>social Proof</p>
-  <p>social Proof</p>
-  <aside class='py-8 mt-4 text-center'>
-  <%= render 'components/buy-cta', locals: {book: @book} %>
-  </aside>
-  </div>
-</section>
-<% if @book.series.books.count > 1 %>
-<section id='other-titles' class='p-4'>
-  <div class="<%=t('css_article')%>">
-    <%= h2("Other books in #{@book.series.title} series") %>
-  </div>
-  <div class='overflow-x-scroll whitespace-nowrap  <%= zebra() %>'>
-    <% @book.series.books.each do |book| %>
-      <div class='inline-block m-3'>
-        <%= link_to book do %>
-          <%= render 'books/cover', book: book %>
-        <% end %>
-        <h3 class='my-2 text-xl text-center'><em><%= book.title %></em></h3>
-      </div>
-    <% end %>
-  </div>
-</section>
-<%end%>
-<% unless @book.excerpt.blank? %>
-<section id='feature' class='py-4 <%= zebra() %>'>
-  <div class="<%=t('css_article')%> ">
-    <%= h2("Excerpt from <em>#{@book}</em>".html_safe) %>
-    <div class="<%=t('css_prose')%> my-4">
-    <%= @book.excerpt %>
-    </div>
-    <aside class='py-8 text-center'>
-    <%= render 'components/buy-cta', locals: {book: @book} %>
-    </aside>
-  </div>
-</section>
-<% end %>
+<%= render 'books/sections/testimonial' %>
+<%= render 'books/sections/series-list' %>
+<%= render 'books/sections/excerpt' %>
 <section class='mb-8'>
   <%= render 'components/subscribe' %>
 </section>

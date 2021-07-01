@@ -1,0 +1,36 @@
+<section class='grid gap-4 py-5 lg:grid-cols-3'>
+  <% if title %>
+  <h3 class="text-4xl text-center font-display lg:hidden">
+    <%= link_to book.title, book %>
+  </h3>
+  <% end %>
+  <div class='grid place-content-center'>
+    <%= render 'books/cover', book: book %>
+  </div>
+  <div class='grid lg:col-span-2 place-content-center'>
+    <% if title %>
+    <h3 class="hidden my-4 text-3xl italic font-semibold text-left font-display lg:block">
+      <%= link_to book.title, book, class: 'hover:underline' %>
+    </h3>
+    <% elsif headlined %>
+      <h1 class="my-6 text-4xl text-center lg:text-6xl font-display">
+        <%= book.headline || book.title %>
+      </h1>
+    <% end %>
+    
+    <section class="<%=t('css_prose')%>">
+    <% if false %>
+      <%= book.blurb.to_plain_text.truncate(330) %>
+    <% else %>
+      <%= book.blurb %>
+    <% end %>
+    </section>
+
+    <div class='mt-8 text-center'>
+    <% if title %>
+    <%= link_to 'Read More', book, class: button_css('purple') %>
+    <% end %>
+    <%= render 'components/buy-cta', locals: {book: book} %>
+    </div>
+  </div>
+</section>

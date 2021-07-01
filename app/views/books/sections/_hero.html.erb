@@ -6,6 +6,16 @@
     <span id="blackOverlay" class="w-full h-full absolute opacity-95 bg-gray-900 <%= overlay || 'bg-gray-900' %>"></span>
   </div>
   <div class="container relative max-w-screen-lg p-4 mx-auto text-white md:text-2xl">
-    <%= render partial: @book, locals: {headlined: true, bordered: false} %>
+    <%= render layout: 'books/layout', locals: {book: @book} do %>
+      <h1 class="my-6 text-4xl text-center lg:text-6xl font-display">
+        <%= @book.headline || @book.title %>
+      </h1>
+      <div class="<%=t('css_prose')%>">
+        <%= @book.blurb %>
+      </div>
+      <aside class='mt-8 text-center'>
+        <%= render 'components/buy-cta', locals: {book: @book} %>
+      </aside>
+    <% end %>
   </div>
 </section>
