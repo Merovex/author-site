@@ -1,5 +1,11 @@
 #hero {
-  text-shadow: 1em 1em 1em orange;
+  text-shadow: 1px 1px 1px black;
+  .prose {
+    color: white;
+  }
+  h3 {
+    font-size: 130% !important;
+  }
 }
 
 .test {

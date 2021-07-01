@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: 'form-input w-full rounded' %>
   </div>
 
-  <div class="field">
-    <%= form.label :content %>
+  <div class="my-4">
+    <%= h2('Synopsis') %>
     <%= form.rich_text_area :content %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Submit", class: button_css('blue')%>
   </div>
 <% end %>

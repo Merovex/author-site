@@ -1,14 +1,7 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @series.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @series.content %>
-</p>
-
-<%= link_to 'Edit', edit_series_path(@series) %> |
-<%= link_to 'Back', series_index_path %>
+<div class="<%=t('css_article')%>">
+  <%= render 'components/actions', obj: @series %>
+  <%= headline(@series.title) %>
+  <section class='<%= t('prose') %>'>
+    <%= @series.content %>
+  </section>
+</div>

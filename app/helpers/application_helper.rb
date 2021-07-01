@@ -1,6 +1,9 @@
 module ApplicationHelper
   def button_css(color = 'blue')
-    "bg-#{color}-500 text-white px-4 py-2 rounded font-medium mx-3 hover:bg-#{color}-600 transition duration-200 each-in-out"
+    "bg-#{color}-500 text-white px-4 py-2 rounded font-medium mx-2 hover:bg-#{color}-600 transition duration-200 each-in-out text-base inline-block"
+  end
+  def zebra()
+    cycle('bg-gray-100 dark:bg-gray-700','', name: 'zebra')
   end
   def headline(title, wrap_title = true)
     content_for(:title, title)

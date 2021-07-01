@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_30_143355) do
+ActiveRecord::Schema.define(version: 2021_07_01_135705) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2021_06_30_143355) do
     t.boolean "is_featured"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "headline"
     t.index ["series_id"], name: "index_books_on_series_id"
   end
 

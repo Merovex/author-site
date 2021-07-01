@@ -15,4 +15,7 @@ class Book < ApplicationRecord
   def background
     cover.variant(auto_orient: true, rotate: 0, resize: "200x300^", crop: '200x300+0+0')
   end
+  def to_s
+    title
+  end
 end

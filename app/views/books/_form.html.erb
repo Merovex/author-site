@@ -21,6 +21,11 @@
     <%= form.text_field :title, class: 'form-input w-full block rounded' %>
   </div>
 
+  <div class="field">
+    <%= form.label :headline, class: 'font-bold text-2xl' %>
+    <%= form.text_field :headline, class: 'form-input w-full block rounded' %>
+  </div>
+
   <div class="my-8">
     <%= form.label :is_featured %>
     <%= form.check_box :is_featured %>
