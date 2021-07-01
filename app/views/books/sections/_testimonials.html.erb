@@ -1,0 +1,11 @@
+<section id='testimonials' class="py-4 <%= zebra() %>">
+  <div class="<%=t('css_article')%> ">
+  <%= h2("Praise for <em>#{@book}</em>".html_safe) %>
+  <p>social Proof</p>
+  <p>social Proof</p>
+  <p>social Proof</p>
+  <aside class='py-8 mt-4 text-center'>
+  <%= render 'components/buy-cta', locals: {book: @book} %>
+  </aside>
+  </div>
+</section>
